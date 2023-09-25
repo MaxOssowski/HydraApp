@@ -2,10 +2,11 @@
     "name": "HydraApp",
     "source": "src/index.html",
     "scripts": {
-      "start": "parcel src/index.html",
-      "build": "parcel build src/index.html"
+        "start": "parcel src/index.html",
+        "build": "parcel build src/index.html"
     },
     "devDependencies": {
-      "parcel": "latest"
+        "parcel": "latest",
+        "tailwindcss": "^3.3.3"
     }
 }
