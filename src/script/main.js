@@ -3,14 +3,13 @@ const addButton = document.querySelector('.add-button--js');
 const deleteButton = document.querySelector('.delete-button--js');
 const key = new Date().toISOString().slice(0, 10);
 
-let storageCounter = "";
-storageCounter = localStorage.getItem(key);
-counter = parseInt(storageCounter);
+let storageCounter = localStorage.getItem(key);
+let counter = parseInt(storageCounter);
 
 if(counter > -1){
     counterSelector.innerHTML = counter;
 } else{
-    let counter = 0;
+    counter = 0;
     localStorage.setItem(key, counter)
     counterSelector.innerHTML = counter;
 }
