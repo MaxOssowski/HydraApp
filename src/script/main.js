@@ -1,14 +1,31 @@
 const counterSelector = document.querySelector('.counter--js');
 const addButton = document.querySelector('.add-button--js');
 const deleteButton = document.querySelector('.delete-button--js');
+const key = new Date().toISOString().slice(0, 10);
+
+let storageCounter = "";
+storageCounter = localStorage.getItem(key);
+counter = parseInt(storageCounter);
+
+if(counter > -1){
+    counterSelector.innerHTML = counter;
+} else{
+    let counter = 0;
+    localStorage.setItem(key, counter)
+    counterSelector.innerHTML = counter;
+}
+
 
 addButton.addEventListener("click", (e) => {
-    counterSelector.innerHTML++;
+    counter++;
+    localStorage.setItem(key, counter);
+    counterSelector.innerHTML = counter;
 });
 
 deleteButton.addEventListener("click", (e) => {
-    let counter = counterSelector.innerHTML;
     if(counter > 0) {
-        counterSelector.innerHTML--;
+        counter--;
+        localStorage.setItem(key, counter);
+        counterSelector.innerHTML = counter;
     }
 });
